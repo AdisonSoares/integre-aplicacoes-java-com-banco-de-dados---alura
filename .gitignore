@@ -1,6 +1,10 @@
-.git
-.classpath
-.project
-bin/
-pom.xml
-.settings
+#Arquivos de configuração Intellij
+.idea/
+out/
+Java-alura-2.iml
+Java_8.iml
+*.iml
+*.idea/
+ArquviosExternos/
+/.project
+/.settings/
