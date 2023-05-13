@@ -4,7 +4,6 @@ import br.com.alura.bytebank.ConnectionFactory;
 import br.com.alura.bytebank.domain.RegraDeNegocioException;
 import java.math.BigDecimal;
 import java.sql.Connection;
-import java.util.HashSet;
 import java.util.Set;
 
 public class ContaService {
@@ -17,8 +16,7 @@ public class ContaService {
 
     public Set<Conta> listarContasAbertas() {
     	Connection conn = connection.recuperarConexao();
-    	return new ContaDAO(conn).listar(); 
-         
+    	return new ContaDAO(conn).listar();
     }
 
     public BigDecimal consultarSaldo(Integer numeroDaConta) {
@@ -29,7 +27,11 @@ public class ContaService {
     public void abrir(DadosAberturaConta dadosDaConta) {
     	Connection conn = connection.recuperarConexao();
     	new ContaDAO(conn).salvar(dadosDaConta);
-
+    }
+    
+    private void alterar(Conta conta, BigDecimal valor) {
+        Connection conn = connection.recuperarConexao();
+        new ContaDAO(conn).alterar(conta.getNumero(), valor);
     }
 
     public void realizarSaque(Integer numeroDaConta, BigDecimal valor) {
@@ -67,7 +69,7 @@ public class ContaService {
     }
 
 	public void realizarTransferencia(Integer numeroDaContaOrigem, Integer numeroDaContaDestino, BigDecimal valor) {
-    	this.realizarSaque(numeroDaContaDestino, valor);
+    	this.realizarSaque(numeroDaContaOrigem, valor);
     	this.realizarDeposito(numeroDaContaDestino, valor);
     	
     }
@@ -90,6 +92,7 @@ public class ContaService {
 
         Connection conn = connection.recuperarConexao();
         new ContaDAO(conn).alterarLogico(numeroDaConta);
+        
     }
 
     private Conta buscarContaPorNumero(Integer numero) {

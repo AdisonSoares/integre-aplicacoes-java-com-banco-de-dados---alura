@@ -44,7 +44,6 @@ public class ContaDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-
 	}
 
 	public Set<Conta> listar() {
@@ -139,7 +138,6 @@ public class ContaDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-
 	}
 	
 	public void deletar(Integer numeroDaConta) {
@@ -179,7 +177,6 @@ public class ContaDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	
 }
 
 
