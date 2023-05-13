@@ -80,8 +80,7 @@ public class ContaService {
             throw new RegraDeNegocioException("Conta não pode ser encerrada pois ainda possui saldo!");
         }
 
-        Connection conn = connection.recuperarConexao();
-        new ContaDAO(conn).deletar(numeroDaConta);
+        new ContaDAO(connection.recuperarConexao()).deletar(numeroDaConta);
     }
     
     public void encerrarLogico(Integer numeroDaConta) {

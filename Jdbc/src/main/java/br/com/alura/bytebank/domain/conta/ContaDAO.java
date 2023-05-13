@@ -136,7 +136,12 @@ public class ContaDAO {
 			conn.close();
 
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			try {
+                conn.rollback();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            throw new RuntimeException(e);
 		}
 	}
 	
@@ -161,7 +166,7 @@ public class ContaDAO {
 	
 	public void alterarLogico(Integer numeroDaConta) {
 		PreparedStatement preparedStatement;
-		String sql = "UPDATE conta SET esta_ativo = false WHERE numero = ?";
+		String sql = "UPDATE conta SET esta_ativa = false WHERE numero = ?";
 
 		try 	{
 			preparedStatement = conn.prepareStatement(sql);
