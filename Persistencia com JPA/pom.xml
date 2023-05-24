@@ -13,14 +13,13 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<release>17</release>
+					<release>11</release>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -32,7 +31,5 @@
 			<artifactId>h2</artifactId>
 			<version>1.4.200</version>
 		</dependency>
-
 	</dependencies>
-
 </project>
