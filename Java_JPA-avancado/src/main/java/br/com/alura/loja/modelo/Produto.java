@@ -13,7 +13,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "produtos")
 public class Produto {
-
+	
+	public Produto() {
+		
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -24,9 +28,6 @@ public class Produto {
 	
 	@ManyToOne
 	private Categoria categoria;
-	
-	public Produto() {
-	}
 	
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		this.nome = nome;
