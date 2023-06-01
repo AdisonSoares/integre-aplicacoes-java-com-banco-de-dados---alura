@@ -33,9 +33,9 @@ public class CadastroDePedido {
 
 		em.getTransaction().begin();
 
-		Integer quantidadeProduto1 = 10;
-		Integer quantidadeProduto2 = 40;
-		Integer quantidadeProduto3 = 2;
+		int quantidadeProduto1 = 10;
+		int quantidadeProduto2 = 40;
+		int quantidadeProduto3 = 2;
 
 		Pedido pedido1 = new Pedido(cliente);
 		pedido1.adicionarItem(new ItemPedido(quantidadeProduto1, pedido1, produto1));
