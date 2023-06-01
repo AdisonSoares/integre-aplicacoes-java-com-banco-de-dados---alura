@@ -13,16 +13,35 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "categorias")
-public class Categoria {
+@Table(name = "clientes")
+public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
 
-	public Categoria(String nome) {
+	private String nome;
+	private String cpf;
+
+
+	public Cliente(String nome, String cpf) {
 		this.nome = nome;
+		this.cpf = cpf;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
