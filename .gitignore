@@ -1,6 +1,7 @@
 #Arquivos de configuração Intellij
 .idea/
 out/
+
 Java-alura-2.iml
 Java_8.iml
 *.iml
