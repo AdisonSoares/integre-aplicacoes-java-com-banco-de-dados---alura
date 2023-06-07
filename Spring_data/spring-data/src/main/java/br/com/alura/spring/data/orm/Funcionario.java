@@ -1,7 +1,6 @@
 package br.com.alura.spring.data.orm;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.annotations.Fetch;
@@ -50,9 +49,9 @@ public class Funcionario {
 	@Override
 	public String toString() {
 		return "Funcionario{" +
-				"id=" + id +
-				", cargo=" + cargo +
-				", nome='" + nome + '\'' +
+				"nome='" + nome + '\'' +
+				", id=" + id +'\'' +
+				", "+cargo+'\'' +
 				", cpf='" + cpf + '\'' +
 				", salario=" + salario +
 				", dataContratacao=" + dataContratacao +

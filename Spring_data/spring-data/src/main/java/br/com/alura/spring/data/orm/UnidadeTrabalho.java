@@ -1,6 +1,5 @@
 package br.com.alura.spring.data.orm;
 
-import java.util.Arrays;
 import java.util.List;
 
 import jakarta.persistence.Entity;

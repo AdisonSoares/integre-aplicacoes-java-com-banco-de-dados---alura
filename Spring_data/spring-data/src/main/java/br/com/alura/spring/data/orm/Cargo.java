@@ -30,7 +30,7 @@ public class Cargo {
 	
 	@Override
 	public String toString() {
-		return "Cargo: "+ descricao +" (id="+id+")";
+		return "Cargo: "+ descricao;
 	}
 
 }
